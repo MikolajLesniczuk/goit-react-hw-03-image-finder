@@ -12,7 +12,7 @@ const APIKEY = '36411349-fd3335cbc8c141eadb26de171';
 class App extends Component {
   state = {
     images: [],
-    page: 0,
+    page: 1,
     per_page: 12,
     inputQuery: '',
   };
@@ -29,7 +29,6 @@ class App extends Component {
     this.setState(prevState => ({
       ...prevState,
       images: [...prevState.images, ...data.hits],
-      page: 1,
     }));
   };
 
@@ -52,7 +51,7 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.fetchApi(this.state.inputQuery);
+    this.fetchApi();
     this.setState(prevState => ({ ...prevState, inputQuery: '' }));
   };
 
@@ -77,8 +76,10 @@ class App extends Component {
           handleChange={this.handleChange}
           inputQuery={this.state.inputQuery}
         />
-        {images.length && <ImageGallery images={images} />}
-        {showMore && <Button onClick={this.moreload} />}
+        {this.state.inputQuery !== '' && <ImageGallery images={images} />}
+        {showMore && this.state.inputQuery !== '' && (
+          <Button onClick={this.moreload} />
+        )}
       </div>
     );
   }

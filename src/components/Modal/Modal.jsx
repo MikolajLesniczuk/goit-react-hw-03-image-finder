@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import s from './Modal.module.css';
-import * as basicLightbox from 'basiclightbox';
+import PropTypes from 'prop-types';
 
-class Modal extends Component {
-  handleImageClick = () => {
-    const instance = basicLightbox.create(`
-    <div className={s.modal s.is-hidden}>
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
-        <button>X</button>
-    </div>
-`);
-    instance.show();
-  };
-
+export default class Modal extends Component {
   render() {
-    return;
+    const { handleBackdropClick } = this;
+    const { largeImage } = this.props;
+    return (
+      <div className={s.Overlay}>
+        <div className={s.Modal}>
+          <img src={largeImage} alt="" />
+        </div>
+      </div>
+    );
   }
 }
-
-export default Modal;
