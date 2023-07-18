@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import SearchBar from './searchBar/searchBar';
 import ImageGallery from './imageGallery/imageGallery';
-import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
+
 import Button from './Button/Button';
-import Loader from './Loader/Loader';
-import Modal from './Modal/Modal';
+// import Loader from './Loader/Loader';
+// import Modal from './Modal/Modal';
 // import { fetchApi } from './api/api';
 const APIKEY = '36411349-fd3335cbc8c141eadb26de171';
 // import s from './searchBar/searchBar.module.css';
