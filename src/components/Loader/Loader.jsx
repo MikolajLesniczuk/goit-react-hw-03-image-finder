@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { Audio } from 'react-loader-spinner';
+import s from './Loader.module.css';
 
 class Loader extends Component {
   render() {
     return (
-      <Audio
-        height="80"
-        width="80"
-        radius="9"
-        color="green"
-        ariaLabel="loading"
-        wrapperStyle=""
-        wrapperClass=""
-      />
+      <div className={s.loader}>
+        <Audio
+          height="120"
+          width="120"
+          radius="9"
+          color="green"
+          ariaLabel="loading"
+          wrapperStyle=""
+          wrapperClass=""
+        />
+      </div>
     );
   }
 }

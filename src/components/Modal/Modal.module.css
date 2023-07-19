@@ -19,3 +19,9 @@
 .is-hidden {
   display: none;
 }
+
+.imgmodal {
+  display: block;
+  width: 800px;
+  height: auto;
+}
