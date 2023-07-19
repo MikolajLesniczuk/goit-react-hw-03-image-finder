@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import s from './Modal.module.css';
 
 export default class Modal extends Component {
-  static propTypes = {
-    largeImage: PropTypes.string,
-    closeModal: PropTypes.func,
-  };
-
   componentDidMount() {
     this.closeOnEscape = event => {
       if (event.key === 'Escape') {
