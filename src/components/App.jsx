@@ -89,7 +89,6 @@ class App extends Component {
         <SearchBar
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
-          inputQuery={this.state.inputQuery}
         />
         {isLoading && <Loader />}
         {this.state.inputQuery !== '' && !isLoading && (
